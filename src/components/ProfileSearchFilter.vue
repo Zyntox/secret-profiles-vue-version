@@ -53,9 +53,12 @@ export default {
 
   .profile-search-filter{
     width: 100vw;
-    padding: 35px;
-    box-sizing: border-box;
-    background-color: #e7e7e7;
+    min-height: 200px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 
     .sex-filter{
       width: 100%;

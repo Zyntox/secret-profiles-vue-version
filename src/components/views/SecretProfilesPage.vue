@@ -174,7 +174,7 @@ export default {
 
     .loading-container{
       width: 100vw;
-      height: calc(100vh - 50px);
+      height: calc(100vh - 280px);
       display: flex;
       justify-content: center;
       align-items: center;
