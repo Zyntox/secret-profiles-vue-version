@@ -82,11 +82,12 @@ export default {
       background-color: #e8e6e6;
       color: #000;
       margin: 5px;
-      transition: 1s background-color;
+      transition: 0.5s background-color;
     }
 
     .active {
       border: none;
+      color: #fff;
       background-color: lighten(#3b7d55, 25%);
     }
 
