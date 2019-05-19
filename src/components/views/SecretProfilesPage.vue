@@ -160,14 +160,6 @@ export default {
 
 <style lang="scss" scoped>
 
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
-
   .secret-profiles-page{
     min-height: calc(100vh - 50px);
     background-color: #f7f7f7;
