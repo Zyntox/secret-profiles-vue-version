@@ -124,7 +124,7 @@ export default {
         if (!this.activeFilters.nameFilter || this.activeFilters.nameFilter.length === 0){
           return profile
         }
-        if(profile.name.first.includes(this.activeFilters.nameFilter) || profile.name.last.includes(this.activeFilters.nameFilter)){
+        if((`${profile.name.first} ${profile.name.last}`).includes(this.activeFilters.nameFilter)){
           return profile;
         }
       })
