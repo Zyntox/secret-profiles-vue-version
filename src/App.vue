@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <MainHeader></MainHeader>
+    <SecretProfilesPage></SecretProfilesPage>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import MainHeader from './components/MainHeader.vue';
+import SecretProfilesPage from './components/views/SecretProfilesPage.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    MainHeader,
+    SecretProfilesPage,
   },
 };
 </script>
 
 <style lang="scss">
+
+body{
+  margin: 0 auto;
+}
+
 #app {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
 </style>
