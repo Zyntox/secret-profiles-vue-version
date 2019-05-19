@@ -107,7 +107,6 @@ export default {
     },
     paginateProfiles(){
       var tempArray = [];
-      console.log(this.activeProfiles);
 
       while(this.activeProfiles.length){
         tempArray.push(this.activeProfiles.splice(0, 40));
@@ -118,7 +117,6 @@ export default {
     },
     filterProfiles(){
       this.activeProfiles = this.currentlyLoadedProfiles;
-      console.log(this.activeProfiles);
 
       // Filter for looking up profiles by substring.
       this.activeProfiles = this.activeProfiles.filter((profile) => {
@@ -130,7 +128,6 @@ export default {
           return profile;
         }
       })
-      console.log(this.activeProfiles);
 
       // Filter for limiting profiles by their gender.
       this.activeProfiles = this.activeProfiles.filter((profile) => {
@@ -141,8 +138,6 @@ export default {
           return profile;
         }
       })
-
-      console.log(this.activeProfiles);
 
       this.paginateProfiles();
 
