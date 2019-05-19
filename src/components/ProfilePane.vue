@@ -1,10 +1,12 @@
 <template lang="html">
   <div>
     <div class="grid-pane">
-      <div
-        class="profile-picture"
-        :style="{ backgroundImage:`url( ${profile.picture.large} )`}"
-      ></div>
+      <div class="profile-picture-container">
+        <div
+          class="profile-picture"
+          :style="{ backgroundImage:`url( ${profile.picture.large} )`}"
+        ></div>
+      </div>
       <div class="name-tag">
         <div class="main-info">
           <span>{{ profile.name.first | capitalize }} {{ profile.name.last | capitalize }}</span>
@@ -40,12 +42,12 @@ export default {
     },
   },
   filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
+    capitalize: (value) => {
+      if (!value) return '';
+      const stringValue = value.toString();
+      return stringValue.charAt(0).toUpperCase() + stringValue.slice(1);
     },
-  }
+  },
 };
 </script>
 
@@ -55,18 +57,24 @@ export default {
     overflow: hidden;
     margin: 15px;
     width: 300px;
-    height:300px;
+    height:370px;
     background-color: #fff;
     border: 1px solid #ececec;
 
     -webkit-box-shadow: -1px 5px 7px -3px rgba(0,0,0,0.3);
     box-shadow: -1px 5px 7px -3px rgba(0,0,0,0.3);
 
-    .profile-picture{
+    .profile-picture-container{
       width: 100%;
-      height: 65%;
-      background-size: cover;
-      background-position: center;
+      height: 70%;
+      box-sizing: border-box;
+      .profile-picture{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
 
     .name-tag{

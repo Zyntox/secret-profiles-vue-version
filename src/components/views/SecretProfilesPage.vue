@@ -76,10 +76,10 @@ export default {
     };
   },
   methods: {
-    updatePage(newPage){
+    updatePage(newPage) {
       this.currentPage = newPage;
     },
-    updateFilters(newfilters){
+    updateFilters(newfilters) {
       this.activeFilters = newfilters;
       this.currentPage = 0;
       this.filterProfiles();
@@ -92,65 +92,66 @@ export default {
           this.loader.status = 'success';
           response.data.results.forEach((item) => {
             // Check if we are below the limit.
-            if(this.currentlyLoadedProfiles.length < this.profileLimit){
+            if (this.currentlyLoadedProfiles.length < this.profileLimit) {
               this.currentlyLoadedProfiles.push(item);
             }
-          })
+          });
           this.filterProfiles();
           this.page += 1;
         })
         .catch((error) => {
+          // eslint-disable-next-line
           console.log(error);
           this.loader.isLoading = false;
           this.loader.status = 'failed';
         });
     },
-    paginateProfiles(){
-      var tempArray = [];
+    paginateProfiles() {
+      const tempArray = [];
 
-      while(this.activeProfiles.length){
+      while (this.activeProfiles.length) {
         tempArray.push(this.activeProfiles.splice(0, 40));
       }
 
       this.activeProfiles = tempArray;
-
     },
-    filterProfiles(){
+    filterProfiles() {
       this.activeProfiles = this.currentlyLoadedProfiles;
 
       // Filter for looking up profiles by substring.
+      // eslint-disable-next-line
       this.activeProfiles = this.activeProfiles.filter((profile) => {
         // If the filter doesnt contain any filter value, return all as passing.
-        if (!this.activeFilters.nameFilter || this.activeFilters.nameFilter.length === 0){
-          return profile
-        }
-        if((`${profile.name.first} ${profile.name.last}`).includes(this.activeFilters.nameFilter)){
+        if (!this.activeFilters.nameFilter || this.activeFilters.nameFilter.length === 0) {
           return profile;
         }
-      })
+        if ((`${profile.name.first} ${profile.name.last}`).includes(this.activeFilters.nameFilter)) {
+          return profile;
+        }
+      });
 
       // Filter for limiting profiles by their gender.
+      // eslint-disable-next-line
       this.activeProfiles = this.activeProfiles.filter((profile) => {
-        if (!this.activeFilters.sexFilter || this.activeFilters.sexFilter.length === 0){
-          return profile
-        }
-        if(profile.gender === this.activeFilters.sexFilter){
+        if (!this.activeFilters.sexFilter || this.activeFilters.sexFilter.length === 0) {
           return profile;
         }
-      })
+        if (profile.gender === this.activeFilters.sexFilter) {
+          return profile;
+        }
+      });
 
       this.paginateProfiles();
-
-    }
+    },
   },
-  computed:{
-    amountOfActiveProfiles(){
-      var sum = 0;
-      for (var i = 0; i < this.activeProfiles.length; i++){
+  computed: {
+    amountOfActiveProfiles() {
+      let sum = 0;
+      for (let i = 0; i < this.activeProfiles.length; i += 1) {
         sum += this.activeProfiles[i].length;
       }
       return sum;
-    }
+    },
   },
   beforeMount() {
     this.fetchProfileData(this.page);
@@ -200,7 +201,4 @@ export default {
     }
 
   }
-
-
-
 </style>
