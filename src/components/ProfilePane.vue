@@ -78,7 +78,11 @@ export default {
     }
 
     .name-tag{
-      padding: 20px;
+      height: 30%;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       box-sizing: border-box;
       text-align: left;
       width: 100%;
