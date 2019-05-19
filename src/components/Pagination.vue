@@ -79,9 +79,8 @@ export default {
 
   .page-number-container{
     .page-number{
-      background-color: rgba(186, 226, 194, 0);
+      background-color: #e8e6e6;
       color: #000;
-      border: 2px solid #3b7d55;
       margin: 5px;
       transition: 1s background-color;
     }
