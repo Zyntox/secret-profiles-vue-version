@@ -1,4 +1,4 @@
-# claremont-profile-test
+# Profile-search
 
 ## Project setup
 ```
