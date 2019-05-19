@@ -1,5 +1,8 @@
 # Profile-search
 
+## Project requirements
+  - nodeJS & NPM ( https://nodejs.org/en/ ) 
+
 ## Project setup
 ```
 npm install
