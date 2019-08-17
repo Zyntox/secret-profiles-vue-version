@@ -1,4 +1,5 @@
-# Profile-search
+# Secret Profiles - Frontend Test (Vue)
+This is the repository for the Vue version of the "Secret Profiles" application test.
 
 ## Project requirements
   - nodeJS & NPM ( https://nodejs.org/en/ ) 
